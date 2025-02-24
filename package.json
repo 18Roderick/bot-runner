@@ -1,0 +1,22 @@
+{
+  "name": "bot-runner",
+  "module": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node   --hash --minify --sourcemap",
+    "build:ts": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "playwright": "^1.50.1",
+    "resend": "^4.1.2"
+  }
+}
