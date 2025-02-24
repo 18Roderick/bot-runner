@@ -1,5 +1,8 @@
 import { getEnvVariables, main } from "./carreras-bot";
 
+const MINUTES = Number(process.env.MINUTES) || 15
+const  FRECUENCY = 1000 * 60 * MINUTES; // 15 minutos
+console.log("FRECUENCY", FRECUENCY, MINUTES);
 //validar si existen las variables necesarias
 getEnvVariables();
 
@@ -18,4 +21,4 @@ setInterval(() => {
         process.exit(1);
     });
 
-}, 1000 * 60 * 15); // Ejecutar cada 5 minutos
+}, FRECUENCY); // Ejecutar cada 5 minutos
